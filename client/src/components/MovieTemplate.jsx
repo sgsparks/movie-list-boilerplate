@@ -1,43 +1,19 @@
 import React from 'react';
+import Add from './Add.jsx'
 
 
-class MovieTemplate extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      watched: false
-    };
-  }
-
-  watchedMovie(){
-    this.setState({
-      watched: true
-    })
-  }
-
-
-
-    render() {
-      var watchedText;
-      if(this.state.watched === false){
-        watchedText = "To Watch"
-      } else {
-        watchedText = "Watched"
-      }
-      const {movie} = this.props;
-
-      return(
-
+var MovieTemplate = (props) => (
      <li >
-       {console.log("watched state ", this.state.watched)}
-       {movie.title}
+     {props.movie}
+
      <button
-     onClick={()=> this.watchedMovie()}
-    > {watchedText}
+      value={props.movie}
+      onClick={()=> props.watchedMovie()}
+    > Watched
     </button>
     </li>
-      );
-    }
-  }
+
+
+  )
 
   export default MovieTemplate;

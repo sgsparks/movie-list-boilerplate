@@ -1,4 +1,5 @@
 import React from 'react';
+import MovieTemplate from './MovieTemplate.jsx'
 
 class Add extends React.Component {
   constructor(props) {
@@ -30,6 +31,7 @@ class Add extends React.Component {
 
   render() {
     return(
+      <div>
       <form>
        <input
          name = "title"
@@ -37,8 +39,13 @@ class Add extends React.Component {
          value = {this.state.title}
          onChange = {this.handleChange}
         />
-        <button onClick={this.handleSubmit}>Add Movie</button>
+        <button
+          onClick={this.handleSubmit}>
+          Add Movie
+        </button>
       </form>
+
+      </div>
     );
   }
 }
